@@ -22,7 +22,6 @@ vssue: true
 ![](/assets/img/header-introduce.png)
 
 博客的标题栏分为这样几个部分：
-
 <TOC />
 
 ## 博客的名称(theme-title)
