@@ -22,9 +22,11 @@
     "lib/"
   ],
   "scripts": {
-    "build": "vuepress build docs --dest docs-dist",
+    "build": "vuepress build docs",
     "dev": "vuepress dev docs --no-cache --temp .temp",
+    "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
+    "deploy": "bash deploy.sh",
     "lint": "eslint --ext .js,.vue lib docs",
     "semantic-release": "semantic-release",
     "serve": "vuepress serve docs --dest docs-dist",
