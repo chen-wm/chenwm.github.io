@@ -2,3 +2,10 @@ node_modules/
 .temp/
 docs-dist/
 *.log
+docs/.vuepress/dist
+npm run build
+git add .
+git add -f docs/.vuepress/dist
+git commit -m "在线预览"
+git push --set-upstream origin gh-pages
+git subtree push --prefix dist origin gh-pages
