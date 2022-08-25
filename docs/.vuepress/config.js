@@ -87,7 +87,7 @@ module.exports = {
 
     header: {
       background: {
-        url: '/assets/img/header-image-03.jpg',
+        url: './assets/img/header-image-03.jpg',
         useGeo: true,
       },
       showTitle: true,
