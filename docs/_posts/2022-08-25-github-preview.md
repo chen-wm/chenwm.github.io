@@ -1,12 +1,11 @@
 ---
 category: config
-draft: true
 tags:
   - 配置 
 date: 2022-08-25
 title: Gihub demo部署在线预览 
 lang: zh-CN
-top: 2
+top: true
 ---
 
 #### 记录第一次部署github demo配置github pages的踩坑过程 :zipper_mouth_face:
