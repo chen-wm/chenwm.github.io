@@ -77,14 +77,3 @@ git subtree push --prefix docs/.vuepress/dist origin gh-pages
 <img :src="$withBase('/assets/img/sh3.jpg')" alt="sh3">
 
 <br/>
-<!-- more -->
-<details>
-<summary><b>配置过程踩坑</b></summary>
-
-### 打包后图片静态资源及样式无法访问问题:
-<img :src="$withBase('/assets/img/sh4.jpg')" alt="sh4">
-
-### 无法引入本地图片:
-因为配置了config.base根路径,需使用img标签 $withBase引入，相对路径及configureWebpack配置别名引入均无效:sob:
-
-</details>
