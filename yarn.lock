@@ -11756,6 +11756,11 @@ vue@^2.6.10:
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
   integrity sha512-VfPwgcGABbGAue9+sfrD4PuwFar7gPb1yl1UK1MwXoQPAw0BKSqWfoYCT/ThFrdEVWoI51dBuyCoiNU9bZDZxQ==
 
+vuepress-copycode@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmmirror.com/vuepress-copycode/-/vuepress-copycode-1.0.1.tgz#b0c5128586ca91cbd3f0d26cf1482e645f457f55"
+  integrity sha512-CIRHsZCX1TMd81LAeQFxKnRdHr3WdrduMO+38eKBGk3g9aYxA4okvA+YrU/x5xQIS/htevk3n7RUNfgJiYPE+Q==
+
 vuepress-html-webpack-plugin@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/vuepress-html-webpack-plugin/-/vuepress-html-webpack-plugin-3.2.0.tgz#219be272ad510faa8750d2d4e70fd028bfd1c16e"
@@ -11768,6 +11773,11 @@ vuepress-html-webpack-plugin@^3.2.0:
     tapable "^1.0.0"
     toposort "^1.0.0"
     util.promisify "1.0.0"
+
+vuepress-plugin-code-copy@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.npmmirror.com/vuepress-plugin-code-copy/-/vuepress-plugin-code-copy-1.0.6.tgz#6431dab764b48b5b203e4936d98b1943651ce4ad"
+  integrity sha512-FiqwMtlb4rEsOI56O6sSkekcd3SlESxbkR2IaTIQxsMOMoalKfW5R9WlR1Pjm10v6jmU661Ex8MR11k9IzrNUg==
 
 vuepress-plugin-container@^2.0.2, vuepress-plugin-container@^2.1.2:
   version "2.1.2"
@@ -11789,6 +11799,11 @@ vuepress-plugin-nprogress@^1.1.6:
   integrity sha512-KJ9jEtuzyOgfdU5w1iQwHMVUqLPvKA4Yr32zbEY1g1wpEveABaLyr1P3We5smPrPo2dd5XLyormqhV9or2GUkw==
   dependencies:
     nprogress "^0.2.0"
+
+vuepress-plugin-one-click-copy@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.npmmirror.com/vuepress-plugin-one-click-copy/-/vuepress-plugin-one-click-copy-1.0.6.tgz#71563b1851013705fab6d48b0bda6028dddbf0e7"
+  integrity sha512-apFCcsBwk9IEDm5HwD6dwor30rl8gr0VjPkmrQlFSR2KD7OjK3ZUwioeEvbrcAiZBi35V6YgndLAHksJXRfpnQ==
 
 vuepress-plugin-redirect@^1.2.3:
   version "1.2.3"

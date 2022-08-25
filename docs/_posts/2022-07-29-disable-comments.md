@@ -5,6 +5,7 @@ tags:
 date: 2022-07-29
 title: Disable Comments
 vssue: false
+header-image: /assets/img/header-image-02.jpg
 ---
 
 Demo of how to disable comments.

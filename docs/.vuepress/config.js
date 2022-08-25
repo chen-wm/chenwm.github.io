@@ -12,13 +12,25 @@ module.exports = {
   },
 
   evergreen: true,
-
+  configureWebpack: {
+    resolve: {
+      alias: {
+        '@images': path.resolve('./assets/img'),
+      },
+    },
+  },
   plugins: [
+    ['one-click-copy', {
+      copySelector: ['div[class*="language-"] pre', 'div[class*="aside-code"] aside'], // String or Array
+      copyMessage: '复制成功!', // default is 'Copied successfully!'
+      toolTipMessage: 'Copy to clipboard', // default is ''Copy to clipboard'
+      duration: 2000, // prompt message display time
+    }],
     ['@vuepress/google-analytics', {
       ga: 'UA-132770851-2',
     }],
   ],
-
+  base: '/chenwm.github.io/',
   chainWebpack: (config, isServer) => {
     if (isServer === false) {
       config.optimization.splitChunks({
@@ -46,7 +58,7 @@ module.exports = {
     lang: 'en-US',
     // logo: '/assets/img/cat.png',
     personalInfo: {
-      nickname: 'chenweiming',
+      nickname: '陈伟铭',
       description: 'web前端开发',
       email: '627891695@qq.com',
       location: 'Fuzhou, China',
@@ -121,7 +133,7 @@ module.exports = {
     },
 
     pagination: {
-      perPage: 5,
+      perPage: 10,
     },
   },
 }
