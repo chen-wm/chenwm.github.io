@@ -1,5 +1,4 @@
 const path = require('path')
-
 module.exports = {
   title: 'CHEN BLOG',
 
@@ -20,6 +19,12 @@ module.exports = {
     },
   },
   plugins: [
+    ['vuepress-plugin-side-anchor'],
+    ['@vuepress/nprogress'],
+    ['@vuepress/search', {
+      searchMaxSuggestions: 10,
+    }],
+    ['@vuepress/active-header-links'],
     ['one-click-copy', {
       copySelector: ['div[class*="language-"] pre', 'div[class*="aside-code"] aside'], // String or Array
       copyMessage: '复制成功!', // default is 'Copied successfully!'
@@ -70,10 +75,6 @@ module.exports = {
           account: 'chenweiming',
           link: 'https://github.com/',
         },
-        // instagram: {
-        //   account: 'meteorlxy.cn',
-        //   link: 'https://www.instagram.com/meteorlxy.cn',
-        // },
         gitlab: {
           account: 'chenweiming',
           link: 'http://gitlab.us168168.com/chenwm',
@@ -87,7 +88,7 @@ module.exports = {
 
     header: {
       background: {
-        url: './assets/img/header-image-03.jpg',
+        url: './assets/img/bg1.webp',
         useGeo: true,
       },
       showTitle: true,
@@ -111,7 +112,7 @@ module.exports = {
 
     nav: [
       { text: 'Home', link: '/', exact: true },
-      { text: 'Category', link: '/posts/', exact: false },
+      { text: 'Tags', link: '/posts/', exact: false },
       { text: 'Custom Pages', link: '/custom-pages/', exact: false },
       { text: 'Github', link: 'https://github.com/chen-wm' },
     ],
@@ -133,7 +134,7 @@ module.exports = {
     },
 
     pagination: {
-      perPage: 10,
+      perPage: 7,
     },
   },
 }

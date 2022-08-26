@@ -2,6 +2,8 @@
 layout: CustomPages
 title: Reference - Custom Pages
 aside: false
+header-image: /assets/img/bg3.webp
+
 ---
 
 ## Add more pages
