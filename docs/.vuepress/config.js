@@ -60,7 +60,19 @@ module.exports = {
   theme: path.resolve(__dirname, '../../lib'),
 
   themeConfig: {
-    lang: 'en-US',
+    lang: {
+      home: '首页',
+      posts: '分类',
+      category: 'category',
+      categories: 'categories',
+      allCategories: '全部',
+      tag: 'tag',
+      tags: 'tags',
+      createdAt: '发布时间',
+      updatedAt: '最后修改',
+      prevPost: '上一篇',
+      nextPost: '下一篇',
+    },
     // logo: '/assets/img/cat.png',
     personalInfo: {
       nickname: '陈伟铭',
@@ -88,7 +100,7 @@ module.exports = {
 
     header: {
       background: {
-        url: './assets/img/bg1.webp',
+        url: './assets/img/bg3.jpg',
         useGeo: true,
       },
       showTitle: true,
