@@ -24,6 +24,30 @@ module.exports = {
     ['@vuepress/search', {
       searchMaxSuggestions: 10,
     }],
+    [
+      'dynamic-title',
+      {
+        showIcon: '/favicon.ico',
+        showText: '(/≧▽≦/)咦！又好了！',
+        hideIcon: '/failure.ico',
+        hideText: '(●—●)喔哟，崩溃啦！',
+        recoverTime: 2000,
+      },
+    ],
+    ['homebadge', {
+      selector: '.hero',
+      repoLink: 'https://github.com/zpfz/vuepress-theme-antdocs',
+      badgeLink: 'https://img.shields.io/github/stars/zpfz/vuepress-theme-antdocs?style=social',
+      badgeGroup: [
+        'https://us168.com/#/',
+        'https://img.shields.io/npm/dt/vuepress-theme-antdocs?style=flat-square&color=red',
+        'https://img.shields.io/github/license/zpfz/vuepress-theme-antdocs?style=flat-square&color=blue',
+        'https://img.shields.io/npm/v/vuepress-theme-antdocs?style=flat-square',
+      ],
+    }],
+    ['vuepress-plugin-reading-time', {
+      excludes: ['/about', '/tag/.*'],
+    }],
     ['@vuepress/active-header-links'],
     ['one-click-copy', {
       copySelector: ['div[class*="language-"] pre', 'div[class*="aside-code"] aside'], // String or Array
@@ -58,7 +82,6 @@ module.exports = {
   },
 
   theme: path.resolve(__dirname, '../../lib'),
-
   themeConfig: {
     lang: {
       home: '首页',

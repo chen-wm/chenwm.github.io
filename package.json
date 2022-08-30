@@ -116,7 +116,9 @@
     "vuepress": "^1.3.0",
     "vuepress-copycode": "^1.0.1",
     "vuepress-plugin-dynamic-title": "^1.0.0",
+    "vuepress-plugin-homebadge": "^0.1.0",
     "vuepress-plugin-one-click-copy": "^1.0.6",
+    "vuepress-plugin-reading-time": "^0.1.1",
     "vuepress-plugin-side-anchor": "^1.0.6"
   },
   "peerDependencies": {

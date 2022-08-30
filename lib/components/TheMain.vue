@@ -6,6 +6,12 @@
       :class="containerClass"
     >
       <main class="main">
+        <!--        <div class="container-box">-->
+        <!--          <div class="demo-item" v-for="item in infoList" :key="item.desc" @click="handleGo(item.path)">-->
+        <!--            <span class="desc" :href="item.path">{{ `${item.desc}` }}</span>-->
+        <!--            <img :src="item.address" class="imgs"/>-->
+        <!--          </div>-->
+        <!--        </div>-->
         <TransitionFadeSlide>
           <component
             :is="layout"
@@ -16,7 +22,6 @@
 
       <aside class="aside">
         <InfoCard class="main-div" />
-
         <PostNavCard
           v-if="$page.type === 'post'"
           class="main-div"
@@ -30,16 +35,28 @@
 import TransitionFadeSlide from '@theme/components/TransitionFadeSlide.vue'
 import PostNavCard from '@theme/components/PostNavCard.vue'
 import InfoCard from '@theme/components/InfoCard.vue'
+import DemoCard from '@theme/components/DemoCard.vue'
 
 export default {
   name: 'TheMain',
-
   components: {
     TransitionFadeSlide,
     InfoCard,
     PostNavCard,
+    DemoCard,
   },
-
+  data () {
+    return {
+      infoList: [
+        {
+          desc: '华人168平台',
+          path: 'https://us168.com/#/',
+          address: require('/docs/.vuepress/public/assets/img/logo.png'),
+          color: '#fde5e7',
+        },
+      ],
+    }
+  },
   computed: {
     layout () {
       const layout = this.$page.frontmatter.layout
@@ -67,12 +84,35 @@ export default {
       }
     },
   },
+  methods: {
+    handleGo (path) {
+      window.open(path, '_blank')
+    },
+  },
 }
 </script>
 
 <style lang="stylus" scoped>
 @require '~@theme/styles/variables'
 
+//.container-box{
+//  .demo-item {
+//    background: #fde5e7;
+//    width: calc(33% - 40px);
+//    display flex
+//    justify-content space-between
+//    padding 0 20px
+//    border-radius 7px
+//    align-items center
+//    .desc{
+//      white-space nowrap
+//    }
+//    .imgs{
+//      height 100%
+//      width 100%
+//    }
+//  }
+//}
 .container
   position relative
   margin 1rem auto
@@ -83,6 +123,7 @@ export default {
   &:not(.show-aside)
     .main
       width 100%
+
     .aside
       display none
   &.show-aside
