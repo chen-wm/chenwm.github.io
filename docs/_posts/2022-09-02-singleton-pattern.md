@@ -3,7 +3,7 @@ category: JavaScript
 tags:
 - 设计模式
 date: 2022-09-02
-title: 单例模式
+title: JavaScript设计模式 —— 单例模式
 ---
 #### 简介
 * 定义：1.只有一个实例。2.可以全局访问

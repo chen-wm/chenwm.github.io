@@ -3,7 +3,7 @@ category: JavaScript
 tags:
 - 设计模式
 date: 2022-09-02
-title: 代理模式
+title: JavaScript设计模式 —— 代理模式
 ---
 #### 简介
 * 定义：根据不同参数可以命中不同的策略

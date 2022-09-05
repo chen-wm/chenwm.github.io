@@ -1,7 +1,7 @@
 ---
 category: JavaScipt
 date: 2022-08-25
-title: 数组扁平化flat方法实现
+title: JavaScript基础 —— 数组扁平化flat方法实现
 lang: zh-CN
 vssue: true
 aside: true

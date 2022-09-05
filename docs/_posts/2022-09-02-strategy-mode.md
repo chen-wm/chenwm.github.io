@@ -3,7 +3,7 @@ category: JavaScript
 tags:
 - 设计模式
 date: 2022-09-02
-title: 策略模式
+title: JavaScript设计模式 —— 策略模式
 ---
 #### 简介
 * 定义：根据不同参数可以命中不同的策略

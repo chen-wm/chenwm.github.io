@@ -3,7 +3,7 @@ category: JavaScript
 tags:
   - JavaScript
 date: 2022-07-28
-title: 函数防抖与函数节流
+title: JavaScript基础 —— 函数防抖与函数节流
 lang: zh-CN
 vssue: true
 vssue-id: 4
