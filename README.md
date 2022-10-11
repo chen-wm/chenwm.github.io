@@ -4,8 +4,7 @@
 [![](https://img.shields.io/npm/v/vuepress-theme-meteorlxy.svg?style=flat)](https://www.npmjs.com/package/vuepress-theme-meteorlxy)
 [![](https://img.shields.io/github/license/meteorlxy/vuepress-theme-meteorlxy.svg?style=flat)](https://github.com/meteorlxy/vuepress-theme-meteorlxy/blob/master/LICENSE)
 
-:heart: chenweiming blog theme for [VuePress](https://vuepress.vuejs.org)
-:heart: chenweiming blog address in [Address](https://chen-wm.github.io/chenwm.github.io/)
+:heart: Blog priview in [Preview Address](https://chen-wm.github.io/chenwm.github.io/)
 
 [//]: # (## Documentation)
 
