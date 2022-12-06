@@ -1,7 +1,7 @@
 ---
 category: Vue
 date: 2022-11-30
-title: 终端执行git commit脚本
+title: git commit自动化
 
 ---
 :::tip
