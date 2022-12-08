@@ -1,43 +1,90 @@
 ---
 category: JavaScript
 date: 2022-12-07
-title: 面试题打卡(二)
+title: CommonJS与EsModule
 
 ---
-### `问题 1：浏览器重绘与回流？`
-#### `回流（reflow）：`
-1、布局引擎会根据各种样式计算每个盒子在页面上的大小与位置。
+:::tip
+### Javascript模块规范有两种：CommonJS,EsModule
+:::
+---
+#### 1. 区别
+* `语法:`  
+  CommonJS模块使用require()引入模块，使用module.exports导出模块  
+  EsModule模块使用import引入模块，使用export导出模块
+```js
+// CommonJs -------
+// 引入模块
+var path = require("path")
+// 导出模块
+const path = ()=>{}
+module.exports = path
 
-2、改变元素的位置和尺寸大小都会引发回流
-<img :src="$withBase('/assets/img/browser01.png')" alt="" ><br/>
-`重绘(Repaint):`<br/> 当一个元素的外观发生改变，但没有改变布局,重新把元素外观绘制出来的过程，叫做重绘。表现为某些元素的外观被改变。
+// EsModule ----------
+// 引入模块
+import path from "path"
+import { doSomeThing } from "path"
+// 导出模块
+export const doSomeThing = ()=>{}
+export default path
+```
+ ---
 
-`重绘：`<br/>1、当计算好盒模型的位置、大小及其他属性后，浏览器根据每个盒子特性进行绘制。
+* `用法:`  
+require()同步加载模块，js是单线程，会阻塞加载  
+import是异步加载模块
 
-2、`『回流』必定会发生『重绘』，『重绘』不一定会引发『回流』`。
-<img :src="$withBase('/assets/img/browser02.png')" alt="" >
-#### 如何触发重排和重绘？
+node.js使用的是CommonJS模块规范。  
+浏览器使用的是EsModule模块异步加载，因为如果使用CommonJS同步加载资源时会有卡顿现象。
+#### 2. node.js环境
+node.js环境中，.js后缀的文件默认使用的是CommonJS模块，如果想要使用ES6模块需要采用.mjs后缀的文件名。
+如果想要不修改文件后缀名，但是又使用ES6模块，可以编辑项目的根目录package.json文件
+```js
+{
+    "type":"module"
+}
+```
+修改`package.json`文件后，`.js`脚本文件就会使用ES6模块解析  
+如果修改`package.json`的同时想要使用CommonJS模块，需要将相应脚本文件后缀改成`.cjs`
+#### 3. 两种模式互相加载
+直接使用CommonJs的require加载EsModule模块会报错  
+因为CommonJS是同步加载，可以使用async与await实现同步
+```js
+// 使用匿名函数闭包
+(async()=>{
+    await import('./test.mjs')
+})()
+```
+---
+#### EsModule加载CommonJs模块
+EsModule可以使用import命令加载CommonJS，
+但是因为CommonJs导出是使用module.export导出整个模块对象，不能直接输出单一项
+如果想要输出单一项，可以使用对象的解构赋值
+test.cjs文件
+```js
+const method1 = ()=>{}
+const method2 = ()=>{}
+module.exports = {
+    method1,
+    method2
+}
+```
+```js
+import Test from "./test.cjs"
+//对象解构赋值
+const { method1,method2 } from Test
 
-* 添加、删除、更新DOM节点
-
-* 通过display: none隐藏一个DOM节点-触发重排和重绘
-
-* 通过visibility: hidden隐藏一个DOM节点-只触发重绘
-
-* 移动或者给页面中的DOM节点添加动画
-
-* 添加一个样式表，调整样式属性
-
-* 用户行为，例如调整窗口大小，改变字号，或者滚动。
-#### 如何避免重绘或者重排？
-1. 集中改变样式，不要一条一条地修改 DOM 的样式。
-
-2. 不要把 DOM 结点的属性值放在循环里当成循环里的变量。
-
-3. 尽量只修改position：absolute或fixed元素，对其他元素影响不大
-
-4. 提升为合成层
-* 优点：
-* * 合成层的位图，会交由 GPU 合成，比 CPU 处理要快
-* * 当需要 repaint 时，只需要 repaint 本身，不会影响到其他的层
-* * 对于 transform 和 opacity 效果，不会触发 layout 和 paint
+// 会报错
+import { method1,method2 } from './test.cjs'
+```
+#### 3. 同时兼容加载两种格式
+`原始模块是CommonJS`
+```js
+import Test from "./test.cjs"
+export const method1 = Test.method1
+export const method2 = Test.method2
+export default Test
+```
+`原始模块是EsModule`
+提供一个统一输出接口export default  
+CommonJS使用import()引入

@@ -59,7 +59,8 @@ module.exports = {
       ga: 'UA-132770851-2',
     }],
   ],
-  base: '/chenwm.github.io/',
+  // base: '/chenwm.github.io/', // 本地启用
+  base: './', // 打包启用
   chainWebpack: (config, isServer) => {
     if (isServer === false) {
       config.optimization.splitChunks({
